@@ -2729,3 +2729,182 @@ section.create-now {
   background-color: $highlight;
   padding: 20px;
 }
+/*
+  -----------
+  add another service part
+  -----------
+*/
+
+#service_length{
+  
+  width:160px;
+
+}
+#service_length_hr{
+
+  width:60px;
+}
+#service_length_min{
+  width: 80px;
+  margin-left: 50px;
+  margin-top: -24px;
+}
+#service_price{
+
+  width:120px;
+}
+
+#currency_selector{
+  width: 100px; 
+  margin-left: 132px;
+  margin-top: -33px;
+  /* display: inline; */
+  font-size: 1.375em;
+  /* line-height: 1.09091em; */
+  font-weight: 600;
+  
+}
+.p{
+  margin-top: 10px;
+}
+
+#detailed_ser_des{
+  overflow:auto;
+  resize:none;
+}
+#listing_description{
+  resize: none;
+  overflow: auto;
+}
+#ser_name{
+  font-size: 22px;
+  font-weight: bold;
+}
+#ser_len_h{
+  font-weight: bold;
+  margin-left: 336px;
+  margin-top: -30px;
+}
+#ser_len_h_label{
+  margin-left: 346px;
+  margin-top: -36px;
+}
+#ser_len_m{
+  font-weight: bold;
+  margin-left: 392px;
+  margin-top: -36px;
+}
+#ser_len_m_label{
+  margin-left: 411px;
+  margin-top: -36px;
+}
+#ser_price{
+  font-weight: bold;
+  margin-left: 470px;
+  margin-top: -35px; 
+}
+#price_unit{
+  margin-left: 528px;
+  margin-top: -36px; 
+}
+#chk_box{
+  margin-left: 550px;
+  margin-top: -34px; 
+}
+#age{
+  width: 80px;
+  font-weight: bold;
+}
+
+
+/*
+  -----------
+  total part
+  -----------
+*/
+#t_price_unit{
+  font-size: 26px;
+}
+#t_ser_price{
+  margin-left: 20px;
+  margin-top: -24px;
+  font-size: 25px;
+}
+#t_ser_len_h{
+  margin-left: 100px;
+  margin-top: -24px;
+  font-size: 14px;
+}
+#t_ser_len_h_label{
+  margin-left: 110px;
+  margin-top: -24px;
+  font-size: 14px; 
+}
+#t_ser_len_m{
+  margin-left: 149px;
+  margin-top: -24px;
+  font-size: 14px; 
+}
+#t_ser_len_m_label{
+  margin-left: 165px;
+  margin-top: -24px;
+  font-size: 14px;
+}
+#t_ser_name{
+  margin-left: 225px;
+  margin-top: -24px;
+  font-size: 14px;
+}
+#line{
+  border-bottom: 1px solid;
+  color: gainsboro;
+}
+#tr_price_unit{
+  font-size: 26px;
+  margin-top: 20px;
+}
+#tr_total_res{
+  font-size: 26px;
+  margin-top: -23px;
+  margin-left: 20px;
+}
+#tr_label{
+  font-size: 26px;
+  margin-top: -25px;
+  margin-left: 120px;
+}
+
+/*
+--------------------
+choose label
+--------------------
+*/
+#choose_label{
+  font-size: 20px;
+  margin-top: 20px;
+}
+#datepicker{
+  height: 5px;
+}
+#cal_icon{
+  width: 25px;
+  height: 25px;
+  margin-top: -22px;
+  margin-left: 240px;
+}
+
+/*
+--------------------
+notes about availability
+--------------------
+*/
+#notes_label{
+  font-size: 20px;
+  margin-top: 15px;
+}
+
+#notes_txtarea{
+  margin-top: 10px;
+  resize: none;
+  overflow: auto;
+}

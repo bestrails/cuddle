@@ -64,6 +64,9 @@ class Listing < ActiveRecord::Base
   has_many :custom_dropdown_field_values, :class_name => "DropdownFieldValue"
   has_many :custom_checkbox_field_values, :class_name => "CheckboxFieldValue"
 
+  has_many :services, :dependent => :destroy
+  accepts_nested_attributes_for :services
+  
   has_one :location, :dependent => :destroy
   has_one :origin_loc, :class_name => "Location", :conditions => ['location_type = ?', 'origin_loc'], :dependent => :destroy
   has_one :destination_loc, :class_name => "Location", :conditions => ['location_type = ?', 'destination_loc'], :dependent => :destroy

@@ -267,6 +267,7 @@ GEM
     multi_xml (0.5.5)
     multipart-post (1.2.0)
     mysql2 (0.3.14)
+    nested_form (0.3.2)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-ssh (2.6.2)
@@ -537,6 +538,7 @@ DEPENDENCIES
   money-rails
   multi_json (~> 1.7.3)
   mysql2
+  nested_form
   newrelic_rpm (~> 3.9.1.236)
   omniauth-facebook
   paperclip

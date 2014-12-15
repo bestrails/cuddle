@@ -1239,7 +1239,7 @@ en:
       departure_time_radio_buttons:
         repeated: "Repeated (add times and days in the field 'detailed description')"
       description:
-        detailed_description: "Detailed description"
+        detailed_description: "Listing description (optional)"
       destination:
         destination: Destination
       form_content:

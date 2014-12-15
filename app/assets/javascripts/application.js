@@ -66,3 +66,4 @@
 //= require paypal_account_settings
 //= require transaction
 //= require_self
+//= require jquery_nested_form

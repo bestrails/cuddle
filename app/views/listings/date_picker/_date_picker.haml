@@ -1,0 +1,15 @@
+- content_for :head do
+  = javascript_include_tag "application"
+.input-append.date
+  %input#datepicker{:type => "hidden"}/
+  #cal_icon
+    %span.add-on
+      %i.icon-th
+
+:javascript
+  
+  $(function() {
+    $( ".date" ).datepicker({
+    'multidate':true
+    });
+  });
