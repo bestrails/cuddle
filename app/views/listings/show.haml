@@ -65,9 +65,31 @@
 
     .row
       .col-12
-        - if @listing.description && !@listing.description.blank?
+        - if @current_user && @listing.description && !@listing.description.blank?
           - text_with_line_breaks do
             = @listing.description
+
+            - @listing.services.each do |i|
+              #ser_name
+                = i.service_name
+              #ser_len_h
+                = i.service_length_hr  
+              #ser_len_h_label
+                = "Hours"  
+              #ser_len_m  
+                = i.service_length_min 
+              #ser_len_m_label
+                = "Minutes"  
+              #ser_price
+                = i.service_price
+              #price_unit
+                = "$"
+              #ser_des
+                = i.detailed_ser_des
+        - if !@current_user && @listing.description && !@listing.description.blank?
+          - text_with_line_breaks do
+            = @listing.description
+
             - @listing.services.each do |i|
               #ser_name
                 = i.service_name
@@ -131,7 +153,36 @@
             = render :partial => "comment_form"
 
   %aside.col-4
-    - if @listing.price
+    - if @current_user
+      .row
+        .col-12
+          -total = 0
+          .listing-price
+            -@listing.services.each do |i|
+              #t_price_unit
+                = "$"
+              #t_ser_price
+                = i.service_price
+              #t_ser_len_h
+                = i.service_length_hr  
+              #t_ser_len_h_label
+                = "Hours"  
+              #t_ser_len_m  
+                = i.service_length_min 
+              #t_ser_len_m_label
+                = "Minutes"  
+              #t_ser_name
+                = i.service_name  
+              %br              
+              -total = total + i.service_price 
+            #line
+            #tr_price_unit
+              = "$"
+            #tr_total_res
+              = total
+            #tr_label
+              = "Total"
+    - if !@current_user 
       .row
         .col-12
           -total = 0
@@ -169,11 +220,12 @@
           #notes_txtarea
             %textarea
             %p
-            %span.listing-price-amount
-              /= humanized_money_with_symbol(@listing.price).upcase
-            - with_quantity_and_vat_text(@current_community, @listing) do |text|
-              %span.listing-price-quantity
-                = text
+          %span.listing-price-amount
+        
+            /= humanized_money_with_symbol(@listing.price).upcase
+          - with_quantity_and_vat_text(@current_community, @listing) do |text|
+            %span.listing-price-quantity
+              = text
 
     .row-with-divider
       .col-12
