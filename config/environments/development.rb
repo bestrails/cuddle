@@ -26,7 +26,7 @@ Kassi::Application.configure do
 
   if APP_CONFIG.mail_delivery_method == "sendmail"
     ActionMailer::Base.delivery_method = :sendmail
-  elsif APP_CONFIG.mail_delivery_method == :ses
+  elsif APP_CONFIG.mail_delivery_method == "ses"
     # Enable sending mail from localhost
     # ActionMailer::Base.smtp_settings = {
     #   :address              => APP_CONFIG.smtp_email_address,
