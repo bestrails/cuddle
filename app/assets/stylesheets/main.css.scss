@@ -2735,6 +2735,44 @@ section.create-now {
   -----------
 */
 
+#first_ser_name{
+  font-size: 22px;
+  font-weight: bold;
+}              
+#first_ser_len_h{
+  font-weight: bold;
+  margin-left: 336px;
+  margin-top: -30px;
+  
+}              
+#first_ser_len_h_label{
+  margin-left: 346px;
+  margin-top: -36px;
+}              
+#first_ser_len_min{
+  font-weight: bold;
+  margin-left: 392px;
+  margin-top: -36px;
+}              
+#first_ser_len_min_label{
+  margin-left: 411px;
+  margin-top: -36px;
+}              
+#first_ser_price{
+  font-weight: bold;
+  margin-left: 470px;
+  margin-top: -35px;
+}              
+#first_price_unit{
+  margin-left: 528px;
+  margin-top: -36px;
+  
+}              
+#first_chk_box{
+  margin-left: 550px;
+  margin-top: -34px; 
+}
+
 #service_length{
   
   width:160px;
@@ -2807,10 +2845,12 @@ section.create-now {
 #price_unit{
   margin-left: 528px;
   margin-top: -36px; 
+  
 }
 #chk_box{
   margin-left: 550px;
-  margin-top: -34px; 
+  margin-top: -34px;
+   
 }
 #age{
   width: 80px;
@@ -2823,8 +2863,46 @@ section.create-now {
   total part
   -----------
 */
+
+
+#first_t_price_unit{
+  font-size: 26px;
+  
+}         
+#first_t_ser_price{
+  margin-left: 20px;
+  margin-top: -24px;
+  font-size: 25px;
+}
+#first_t_ser_len_h{
+  margin-left: 100px;
+  margin-top: -24px;
+  font-size: 14px;
+}
+#first_t_ser_len_h_label{
+  margin-left: 110px;
+  margin-top: -24px;
+  font-size: 14px;
+}
+#first_t_ser_len_min{
+  margin-left: 149px;
+  margin-top: -24px;
+  font-size: 14px;
+}
+#first_t_ser_len_m_label{
+  margin-left: 165px;
+  margin-top: -24px;
+  font-size: 14px;
+}
+#first_t_ser_name{
+  margin-left: 225px;
+  margin-top: -24px;
+  font-size: 14px;
+}
+
 #t_price_unit{
   font-size: 26px;
+  
 }
 #t_ser_price{
   margin-left: 20px;

@@ -62,12 +62,39 @@
                         = t("listings.show.processing_uploaded_image")
                       - else
                         = t(".no_description")
-
     .row
       .col-12
-        - if @current_user && @listing.description && !@listing.description.blank?
+        - if @current_user == @listing.author
           - text_with_line_breaks do
             = @listing.description
+            #first_ser_name
+              = @listing.first_service_name
+            #first_ser_len_h
+              - if @listing.first_service_length_hr == 0
+                = ' '
+              - else
+                = @listing.first_service_length_hr
+            #first_ser_len_h_label
+              - if @listing.first_service_length_hr == 0
+                = ' '
+              - else
+                = "Hours"
+            #first_ser_len_min
+              - if @listing.first_service_length_min == 0
+                = ' '    
+              - else 
+                = @listing.first_service_length_min
+            #first_ser_len_min_label
+              - if @listing.first_service_length_min == 0
+                = ' '
+              - else
+                = "Minutes"
+            #first_ser_price
+              = number_with_precision(@listing.price, :precision => 2, :delimiter => ',')
+            #first_price_unit
+              = "$"
+            #first_ser_des
+              = @listing.first_service_description
             - @listing.services.each do |i|
               #ser_name
                 = i.service_name
@@ -97,9 +124,39 @@
                 = "$"
               #ser_des
                 = i.detailed_ser_des
-        - if !@current_user && @listing.description && !@listing.description.blank?
+        - if !@current_user && @listing.description && !@listing.description.blank? || @current_user != @listing.author
           - text_with_line_breaks do
             = @listing.description
+            #first_ser_name
+              = @listing.first_service_name
+            #first_ser_len_h
+              - if @listing.first_service_length_hr == 0
+                = ' '
+              - else
+                = @listing.first_service_length_hr
+            #first_ser_len_h_label
+              - if @listing.first_service_length_hr == 0
+                = ' '
+              - else
+                = "Hours"
+            #first_ser_len_min
+              - if @listing.first_service_length_min == 0
+                = ' '    
+              - else 
+                = @listing.first_service_length_min
+            #first_ser_len_min_label
+              - if @listing.first_service_length_min == 0
+                = ' '
+              - else
+                = "Minutes"
+            #first_ser_price
+              = number_with_precision(@listing.price, :precision => 2, :delimiter => ',')
+            #first_price_unit
+              = "$"
+            #first_chk_box                
+              = check_box(:yes,{:id => "yes",:value => "yes"})
+            #first_ser_des
+              = @listing.first_service_description
             - @listing.services.each do |i|
               #ser_name
                 = i.service_name
@@ -131,6 +188,7 @@
                 = check_box(:yes,{:id => "yes",:value => "yes"})
               #ser_des
                 = i.detailed_ser_des
+        
     - @listing.custom_field_values.each do |custom_field_value|
       .row
         .col-12
@@ -175,11 +233,38 @@
             = render :partial => "comment_form"
 
   %aside.col-4
-    - if !@current_user 
+    - if !@current_user || @current_user != @listing.author
       .row
         .col-12
           -total = 0
           .listing-price
+            #first_t_price_unit
+              = "$"
+            #first_t_ser_price
+              = number_with_precision(@listing.price_cents/100.00, :precision => 2, :delimiter => ',')
+            #first_t_ser_len_h
+              - if @listing.first_service_length_hr == 0
+                = ' '
+              - else
+                = @listing.first_service_length_hr
+            #first_t_ser_len_h_label
+              - if @listing.first_service_length_hr == 0
+                = ' '
+              - else
+                = "Hours"
+            #first_t_ser_len_min
+              - if @listing.first_service_length_min == 0
+                = ' '
+              - else
+                = @listing.first_service_length_min
+            #first_t_ser_len_m_label
+              - if @listing.first_service_length_min == 0
+                = ' '
+              - else
+                = "Minutes"
+            #first_t_ser_name
+              = @listing.first_service_name
+            %p
             -@listing.services.each do |i|
               #t_price_unit
                 = "$"
@@ -213,6 +298,7 @@
             #tr_price_unit
               = "$"
             #tr_total_res
+              - total = @listing.price_cents/100.00 + total
               = number_with_precision(total, :precision => 2, :delimiter => ',')
             #tr_label
               = "Total"            
@@ -221,12 +307,11 @@
             /= render :partial => "listings/date_picker/date_picker"
           #notes_label
             /= "Notes about availability"
-          
           #notes_txtarea
             /%textarea
             %p
           %span.listing-price-amount        
-            = humanized_money_with_symbol(@listing.price).upcase
+            /= humanized_money_with_symbol(@listing.price).upcase
           - with_quantity_and_vat_text(@current_community, @listing) do |text|
             %span.listing-price-quantity
               = text

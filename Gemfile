@@ -34,6 +34,7 @@ gem 'rest-client', '>= 1.6.0'
 gem 'paperclip'
 gem 'delayed_paperclip'
 gem 'aws-sdk'
+gem 'aws-ses', '~> 0.4.4', require: 'aws/ses'
 gem "will_paginate"
 gem 'dalli'
 gem "memcachier"

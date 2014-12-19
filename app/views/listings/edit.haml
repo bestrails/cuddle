@@ -10,19 +10,23 @@
 
 #new_listing_form.edit-listing-form.centered-section
   = nested_form_for @listing, :html => {:multipart => true} do |form|
-    
     = render :partial => "listings/form/title", :locals => { :form => form }
-    = render :partial => "listings/form/price", :locals => { :form => form, :seller_commission_in_use => @seller_commission_in_use, :run_js_immediately => false, :minimum_commission => minimum_commission }
     = render :partial => "listings/form/description", :locals => { :form => form }
+    = form.label "Service name" + "*"
+    = form.text_field :first_service_name
+    = form.label "Service length" + "*"
+    = form.select :first_service_length_hr, [["Hr"],[0],[1],[2],[3],[4],[5],[6],[7],[8]]
+    = form.select :first_service_length_min, [["Min"],[0],[5],[10],[15],[20],[30],[45]]
+    = render :partial => "listings/form/price", :locals => { :form => form, :seller_commission_in_use => @seller_commission_in_use, :run_js_immediately => true, :minimum_commission => minimum_commission }
+    = form.label  "Detailed service description" + "*"
+    = form.text_area :first_service_description
     = form.fields_for :services do |builder| 
-      
       = builder.label :service_name, "Service name" 
       = builder.text_field :service_name
       = builder.label  "Service length" 
       #service_length
         #service_length_hr
           = builder.select :service_length_hr, [["Hr"],[0],[1],[2],[3],[4],[5],[6],[7],[8]]
-
         #service_length_min
           = builder.select :service_length_min, [["Min"],[0],[5],[10],[15],[20],[30],[45]]
       = builder.label  "Service price" 

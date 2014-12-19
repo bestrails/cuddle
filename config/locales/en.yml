@@ -495,7 +495,7 @@ en:
       conversation_with_user: "With %{person}"
       conversation_with: "Conversation with %{person}"
       last_message_at: "(latest message %{time})"
-      price: "Price: %{price}"
+      price: "Service Price: %{price}"
       sum: "Total: %{sum}"
       price_excludes_vat: "(excludes VAT)"
       total: "Total: %{total}"
@@ -1271,7 +1271,7 @@ en:
       location:
         location: Location
       price:
-        price: Price
+        price: Service price
         per: per
         per_day: "per day"
         mass: "piece, kg, l, m2, ..."
