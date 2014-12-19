@@ -249,7 +249,7 @@ module ApplicationHelper
   def icon_class(icon_name)
     icon = ICONS[ICON_PACK][icon_name]
     if icon.nil?
-      icon = (ICON_PACK == "font-awesome" ? "icon-circle-blank" : "ss-record")
+      icon = (ICON_PACK == "font-awesome" ? "icon-reorder" : "ss-record")
     end
     return icon
   end

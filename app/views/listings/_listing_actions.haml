@@ -19,7 +19,6 @@
   - unless is_author
 
     = form_tag form_path, :method => :get, :id => "booking-dates" do
-
       - if @listing.transaction_type.price_per
         - days = [:sunday, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday]
         - months = [:january, :february, :march, :april, :may, :june, :july, :august, :september, :october, :november, :december]
@@ -45,9 +44,6 @@
 
             $("#booking-dates").validate({
               submitHandler: function(form) {
-                var $form = $(form);
-                $form.find("#start-on").attr("name", "");
-                $form.find("#end-on").attr("name", "");
 
                 form.submit();
               }
@@ -55,6 +51,7 @@
 
             window.ST.initializeFromToDatePicker('datepicker');
         .input-daterange.input-group.clearfix#datepicker{:data => {:locale => I18n.locale, :dateformat => t("datepicker.format")}}
+          /= render :partial => "listings/date_picker/date_picker"
           .datepicker-start-wrapper
             = label_tag t(".booking_from")
             %input.input-sm.form-control.required#start-on{:type => 'text', :name => "start-on-display", :placeholder => t("datepicker.format"), :data => { :output => "booking-start-output" } }
@@ -65,6 +62,7 @@
             %input.input-sm.form-control.required#end-on{:type => 'text', :name => "end-on-display", :placeholder => t("datepicker.format"), :data => { :output => "booking-end-output" }}
             %input#booking-end-output{:type => 'hidden', :name => 'end_on'}
 
+      
       %button.book-button
         .content
           = @listing.transaction_type.action_button_label(I18n.locale)

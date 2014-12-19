@@ -12,7 +12,7 @@
   = nested_form_for @listing, :html => {:multipart => true} do |form|
     
     = render :partial => "listings/form/title", :locals => { :form => form }
-    /= render :partial => "listings/form/price", :locals => { :form => form, :seller_commission_in_use => @seller_commission_in_use, :run_js_immediately => false, :minimum_commission => minimum_commission }
+    = render :partial => "listings/form/price", :locals => { :form => form, :seller_commission_in_use => @seller_commission_in_use, :run_js_immediately => false, :minimum_commission => minimum_commission }
     = render :partial => "listings/form/description", :locals => { :form => form }
     = form.fields_for :services do |builder| 
       
@@ -31,7 +31,7 @@
       #currency_selector
         = "$"  
       %p= ""  
-      %p= "After cuddlepop and payment processor fees you will get" + "USD"
+      /%p= "After cuddlepop and payment processor fees you will get" + "USD"
       = builder.label  "Detailed service description" 
       #detailed_ser_des
         = builder.text_area :detailed_ser_des

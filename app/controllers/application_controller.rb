@@ -37,6 +37,9 @@ class ApplicationController < ActionController::Base
   rescue_from RestClient::Unauthorized, :with => :session_unauthorized
 
   helper_method :root, :logged_in?, :current_user?
+  #precision 2 position
+  require 'action_view'
+  include ActionView::Helpers::NumberHelper
 
   def set_locale
 

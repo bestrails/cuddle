@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141215075624) do
+ActiveRecord::Schema.define(:version => 20141217180819) do
 
   create_table "auth_tokens", :force => true do |t|
     t.string   "token"
@@ -862,11 +862,11 @@ ActiveRecord::Schema.define(:version => 20141215075624) do
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
     t.string   "service_name"
-    t.float    "service_price"
     t.text     "detailed_ser_des"
     t.integer  "service_length_hr"
     t.integer  "service_length_min"
     t.integer  "listing_id"
+    t.float    "service_price"
   end
 
   create_table "sessions", :force => true do |t|
