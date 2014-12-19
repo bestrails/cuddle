@@ -167,7 +167,7 @@ ul {
   margin-right: auto;
 
   form {
-    padding-bottom: lines(2);
+    padding-bottom: lines(0);
   }
 
   a.fb-connect {
@@ -2761,13 +2761,14 @@ section.create-now {
   /* display: inline; */
   font-size: 1.375em;
   /* line-height: 1.09091em; */
-  font-weight: 600;
-  
+  font-weight: 600;  
 }
 .p{
   margin-top: 10px;
 }
-
+#detailed_ser_des_label{
+  margin-top: 20px;
+}
 #detailed_ser_des{
   overflow:auto;
   resize:none;
