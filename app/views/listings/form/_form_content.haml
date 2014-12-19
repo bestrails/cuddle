@@ -1,6 +1,6 @@
 = render :partial => "listings/form/javascripts", :locals => { :listing_id => "false", :run_js_immediately => true }
 = nested_form_for @listing, :html => {:multipart => true} do |form|
-  = render :partial => "listings/form/category", :locals => { :form => form }
+  /= render :partial => "listings/form/category", :locals => { :form => form }
   = render :partial => "listings/form/title", :locals => { :form => form }
   = render :partial => "listings/form/description", :locals => { :form => form }
   = render :partial => "listings/form/price", :locals => { :form => form, :seller_commission_in_use => @seller_commission_in_use, :run_js_immediately => true, :minimum_commission => minimum_commission }
