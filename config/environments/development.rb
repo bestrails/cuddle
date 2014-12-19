@@ -26,7 +26,7 @@ Kassi::Application.configure do
 
   if APP_CONFIG.mail_delivery_method == "sendmail"
     ActionMailer::Base.delivery_method = :sendmail
-  elsif APP_CONFIG.mail_delivery_method == "ses"
+  elsif APP_CONFIG.mail_delivery_method == "smtp"
     # Enable sending mail from localhost
     # ActionMailer::Base.smtp_settings = {
     #   :address              => APP_CONFIG.smtp_email_address,
@@ -37,10 +37,11 @@ Kassi::Application.configure do
     #   :authentication       => 'plain',
     #   :enable_starttls_auto => true
     # }
-    ActionMailer::Base.delivery_method = :ses
-    ActionMailer::Base.add_delivery_method :ses, AWS::SES::Base, 
-      :access_key_id => APP_CONFIG.smtp_access_key, :secret_access_key => APP_CONFIG.smtp_secret_key
+    
+
   end
+
+  config.action_mailer.delivery_method = :ses
 
   config.active_support.deprecation = :log
 
