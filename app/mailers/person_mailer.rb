@@ -18,6 +18,13 @@ class PersonMailer < ActionMailer::Base
 
   add_template_helper(EmailTemplateHelper)
 
+  def test
+    mail(to: "johann.karl01@hotmail.com",
+         body: "Hi Johann",
+         content_type: "text/html",
+         subject: "Test Email")
+  end
+
   def conversation_status_changed(conversation, community)
     @email_type =  (conversation.status == "accepted" ? "email_when_conversation_accepted" : "email_when_conversation_rejected")
     set_up_urls(conversation.other_party(conversation.listing.author), community, @email_type)
