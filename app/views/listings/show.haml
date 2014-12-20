@@ -95,7 +95,7 @@
               = "$"
             #first_ser_des
               = @listing.first_service_description
-            - @listing.services.each do |i|
+            - @listing.anothers.each do |i|
               #ser_name
                 = i.service_name
               #ser_len_h
@@ -157,7 +157,7 @@
               = check_box(:yes,{:id => "yes",:value => "yes"})
             #first_ser_des
               = @listing.first_service_description
-            - @listing.services.each do |i|
+            - @listing.anothers.each do |i|
               #ser_name
                 = i.service_name
               #ser_len_h
@@ -265,7 +265,7 @@
             #first_t_ser_name
               = @listing.first_service_name
             %p
-            -@listing.services.each do |i|
+            -@listing.anothers.each do |i|
               #t_price_unit
                 = "$"
               #t_ser_price

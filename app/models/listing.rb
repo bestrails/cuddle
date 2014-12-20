@@ -3,37 +3,41 @@
 #
 # Table name: listings
 #
-#  id                  :integer          not null, primary key
-#  author_id           :string(255)
-#  category_old        :string(255)
-#  title               :string(255)
-#  times_viewed        :integer          default(0)
-#  language            :string(255)
-#  created_at          :datetime
-#  updates_email_at    :datetime
-#  updated_at          :datetime
-#  last_modified       :datetime
-#  sort_date           :datetime
-#  visibility          :string(255)      default("this_community")
-#  listing_type_old    :string(255)
-#  description         :text
-#  origin              :string(255)
-#  destination         :string(255)
-#  valid_until         :datetime
-#  delta               :boolean          default(TRUE), not null
-#  open                :boolean          default(TRUE)
-#  share_type_old      :string(255)
-#  privacy             :string(255)      default("private")
-#  comments_count      :integer          default(0)
-#  subcategory_old     :string(255)
-#  old_category_id     :integer
-#  category_id         :integer
-#  share_type_id       :integer
-#  transaction_type_id :integer
-#  organization_id     :integer
-#  price_cents         :integer
-#  currency            :string(255)
-#  quantity            :string(255)
+#  id                        :integer          not null, primary key
+#  author_id                 :string(255)
+#  category_old              :string(255)
+#  title                     :string(255)
+#  times_viewed              :integer          default(0)
+#  language                  :string(255)
+#  created_at                :datetime
+#  updates_email_at          :datetime
+#  updated_at                :datetime
+#  last_modified             :datetime
+#  sort_date                 :datetime
+#  visibility                :string(255)      default("this_community")
+#  listing_type_old          :string(255)
+#  description               :text
+#  origin                    :string(255)
+#  destination               :string(255)
+#  valid_until               :datetime
+#  delta                     :boolean          default(TRUE), not null
+#  open                      :boolean          default(TRUE)
+#  share_type_old            :string(255)
+#  privacy                   :string(255)      default("private")
+#  comments_count            :integer          default(0)
+#  subcategory_old           :string(255)
+#  old_category_id           :integer
+#  category_id               :integer
+#  share_type_id             :integer
+#  transaction_type_id       :integer
+#  organization_id           :integer
+#  price_cents               :integer
+#  currency                  :string(255)
+#  quantity                  :string(255)
+#  first_service_length_hr   :integer
+#  first_service_length_min  :integer
+#  first_service_description :text
+#  first_service_name        :string(255)
 #
 # Indexes
 #
@@ -64,8 +68,8 @@ class Listing < ActiveRecord::Base
   has_many :custom_dropdown_field_values, :class_name => "DropdownFieldValue"
   has_many :custom_checkbox_field_values, :class_name => "CheckboxFieldValue"
 
-  has_many :services, :dependent => :destroy
-  accepts_nested_attributes_for :services
+  has_many :anothers, :dependent => :destroy
+  accepts_nested_attributes_for :anothers
   
   has_one :location, :dependent => :destroy
   has_one :origin_loc, :class_name => "Location", :conditions => ['location_type = ?', 'origin_loc'], :dependent => :destroy

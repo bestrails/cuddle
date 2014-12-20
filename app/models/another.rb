@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: services
+# Table name: anothers
 #
 #  id                 :integer          not null, primary key
 #  created_at         :datetime         not null
@@ -13,7 +13,7 @@
 #  service_price      :float
 #
 
-class Service < ActiveRecord::Base
+class Another < ActiveRecord::Base
   # attr_accessible :title, :body
   belongs_to :listing, :foreign_key => "listing_id"
 end

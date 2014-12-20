@@ -11,7 +11,7 @@
   = render :partial => "listings/form/price", :locals => { :form => form, :seller_commission_in_use => @seller_commission_in_use, :run_js_immediately => true, :minimum_commission => minimum_commission }
   = form.label  "Detailed service description" + "*"
   = form.text_area :first_service_description
-  = form.fields_for :services do |builder|     
+  = form.fields_for :anothers do |builder|     
     = builder.label :service_name, "Service name" 
     = builder.text_field :service_name
     = builder.label  "Service length" 
@@ -31,7 +31,7 @@
     #detailed_ser_des
       = builder.text_area :detailed_ser_des
     = builder.link_to_remove "Remove this service"
-  = form.link_to_add "+Add another service", :services
+  = form.link_to_add "+Add another service", :anothers
   = render :partial => "listings/form/custom_fields", :locals => { :form => form, :listing => @listing, :custom_fields => @custom_field_questions }
   = render :partial => "listings/form/valid_until", :locals => { :form => form }
   = render :partial => "listings/form/origin", :locals => { :form => form, :origin_loc => @listing.origin_loc }
